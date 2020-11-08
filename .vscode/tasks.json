@@ -1,0 +1,21 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Upload Firmware",
+            "type": "shell",
+            "command": "avrdude",
+            "args": [
+                "-p",
+                "m32u4",
+                "-c",
+                "avrisp2",
+                "-U",
+                "flash:w:${command:cmake.launchTargetPath}:e"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
